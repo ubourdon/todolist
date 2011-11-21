@@ -1,0 +1,18 @@
+<!ELEMENT dataset (history*)>
+
+<!ELEMENT history EMPTY>
+<!ATTLIST history
+  id
+  username
+  password
+>
+<!-- vidalId CDATA #REQUIRED
+  date CDATA #REQUIRED
+  productType CDATA #REQUIRED
+  ammType CDATA #REQUIRED
+  code7 CDATA #REQUIRED
+  code13 CDATA #REQUIRED
+  event CDATA #REQUIRED
+  marketStatus CDATA #REQUIRED
+  type CDATA #REQUIRED
+  name CDATA #REQUIRED-->

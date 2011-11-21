@@ -1,0 +1,55 @@
+div.onglets {
+    z-index: 5;
+    background-color: white;
+    width: 770px;
+    height: 459px;
+}
+
+ul.onglets {
+    margin-bottom: .45em;
+}
+
+ul.onglets li {
+    display: inline;
+    border: solid 1px black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: .5em;
+    background-color: white;
+    z-index: -1;
+    position: relative;
+}
+
+ul.onglets li.selected {
+    border-bottom: none;
+    z-index: 10;        /*backgroud place*/
+    position: relative;
+}
+
+.selected {
+    background-color: #f5f5dc !important;
+}
+
+div.selected {
+    /*height: 433px;*/
+}
+
+/* Onglets */
+
+/*.onglets { margin: 0; padding: 0; font-size: 14px; /*line-height: 16px; *//*height: 29px; }*/
+/*.onglets li {                            display: inline;                              list-style: none; margin: 0; line-height: 29px; }
+.onglets * {                             display: inline;                              line-height: 29px; }
+.onglets a { text-decoration: none; line-height: 29px; color: black; text-shadow: #eef 0 0 2px; }
+
+.onglets li.pageActuelle { background: #eef7ff url('../images/onglet-haut-actuel-gauche.png'); padding: 6px 0; }
+.onglets li.pageActuelle span { background: transparent url('../images/onglet-haut-actuel-droit.png') no-repeat 100% 0; padding: 6px 7px; }
+
+.onglets a { background: #8cb9e9 url('../images/onglet-haut-normal-gauche.png'); padding: 6px 0; }
+.onglets a span { background: transparent url('../images/onglet-haut-normal-droit.png') no-repeat 100% 0; padding: 6px 7px; }
+.onglets a:hover, .onglets a:focus, .onglets a:active { background-position: 0 32px; color: #005; }
+.onglets a:hover span, .onglets a:focus span, .onglets a:active span { background-position: 100% -32px; }
+
+#pied .onglets li.pageActuelle      { background-image: url('../images/onglet-bas-actuel-gauche.png'); }
+#pied .onglets li.pageActuelle span { background-image: url('../images/onglet-bas-actuel-droit.png');  }
+#pied .onglets a                    { background-image: url('../images/onglet-bas-normal-gauche.png'); }
+#pied .onglets a span               { background-image: url('../images/onglet-bas-normal-droit.png');  }*/

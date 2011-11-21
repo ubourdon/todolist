@@ -1,0 +1,4 @@
+<!DOCTYPE dataset SYSTEM "flatXmlDataSet.dtd">
+<dataset>
+ <user id="1" username="bob" password="bobby" />
+</dataset>

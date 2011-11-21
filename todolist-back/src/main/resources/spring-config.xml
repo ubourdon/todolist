@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+        <!--xmlns="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		    xmlns:p="http://www.springframework.org/schema/p"
+		    xmlns:context="http://www.springframework.org/schema/context"
+		    xmlns:tx="http://www.springframework.org/schema/tx"
+		    xmlns:aop="http://www.springframework.org/schema/aop"
+		    xsi:schemaLocation="http://www.springframework.org/schema/beans
+		    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		    http://www.springframework.org/schema/tx
+		    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		    http://www.springframework.org/schema/aop
+		    http://www.springframework.org/schema/tx/spring-aop-2.5.xsd
+		    http://www.springframework.org/schema/context
+		    http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+		    __default-autowire__="byName"-->
+
+
+
+	<context:annotation-config />
+    <!-- proxy-target-class="true" pour autowired sans interface-->
+    <context:component-scan base-package="fr.libre.todolist" />
+	<!-- Instructs the container to look for beans with @Transactional and decorate them -->
+	<!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+	<!-- Creates an in-memory "rewards" database populated with test data for fast testing -->
+	<!--<jdbc:embedded-database id="dataSource">
+		<jdbc:script location="classpath:rewards/testdb/schema.sql"/>
+		<jdbc:script location="classpath:rewards/testdb/test-data.sql"/>
+	</jdbc:embedded-database>-->
+
+	<!-- A Hibernate SessionFactory for mapping domain from object to relation tables -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<!--<property name="dataSource" ref="dataSource"/>-->
+		<property name="annotatedClasses">
+			<list>
+				<value>fr.libre.todolist.domain.Todo</value>
+				<value>fr.libre.todolist.domain.Group</value>
+				<value>fr.libre.todolist.domain.User</value>
+			</list>
+		</property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+        <!--<property name="hibernateProperties"> marche pas mais pourquoi ?
+			<props>
+                <prop key="connection.driver_class">org.hsqldb.jdbcDriver</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <prop key="hibernate.current_session_context_class">org.hibernate.context.ThreadLocalSessionContext</prop>
+                <prop key="format_sql">true</prop>
+                <prop key="show_sql">true</prop>
+                <prop key="connection.url">jdbc:hsqldb:mem:TODO_DB</prop>
+                <prop key="connection.username">sa</prop>
+                <prop key="connection.password"></prop>
+                <prop key="hbm2ddl.auto">create</prop>
+			</props>
+		</property>-->
+	</bean>
+
+    <!-- A transaction manager for working with Hibernate SessionFactories -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+</beans>

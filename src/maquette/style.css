@@ -1,0 +1,43 @@
+h2, h3 {
+    text-align: center;
+}
+
+div {
+    width: 770px;
+}
+
+select {
+    width: 10em;
+}
+
+#addTodo {
+    border-top-style: none;
+    height: 50px;
+    padding-top: 15px;
+}
+
+#todoStatus {
+    background-color: #7fffd4;
+}
+
+.yScroll {
+    overflow-y: auto;
+    border: solid 1px black;
+    padding-left: 10px;
+}
+
+.floatRight {
+    float: right;
+    border: solid 1px black;
+    margin-top: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 603px;
+    height: 525px;
+}
+
+.todoContent {
+    width: 590px;
+    height: 300px;
+    padding: 5px;
+}
