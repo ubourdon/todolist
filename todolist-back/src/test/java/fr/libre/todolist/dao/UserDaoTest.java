@@ -1,5 +1,6 @@
 package fr.libre.todolist.dao;
 
+import fr.libre.todolist.ConstantDirectory;
 import fr.libre.todolist.domain.Todo;
 import fr.libre.todolist.domain.TodoBuilder;
 import fr.libre.todolist.domain.User;
@@ -26,7 +27,7 @@ import static org.fest.assertions.Assertions.assertThat;
  * Date: 12/11/11
  */
 @RunWith( SpringJUnit4ClassRunner.class )
-@ContextConfiguration( locations = "classpath:spring-config-test.xml" )
+@ContextConfiguration( locations = ConstantDirectory.CLASSPATH_SPRING_CONFIGURATION_TEST_FILE )
 @Transactional
 public class UserDaoTest {
 	final Logger log = LoggerFactory.getLogger( this.getClass() );
